@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards & Recognition | DS.PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --accent: #00ff88;
+            --accent-hover: #00cc6a;
+            --border: #e0e0e0;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            padding: 0.6rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .awards-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
+        .awards-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .awards-hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+
+        /* Story Section */
+        .story-section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .story-highlight {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin-bottom: 5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+            z-index: 1;
+        }
+
+        .timeline-year {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .award-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .award-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .award-card:hover .award-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .award-medal {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            border: 3px solid;
+            transition: all 0.3s ease;
+        }
+
+        .gold-medal {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-color: #b8860b;
+            color: #b8860b;
+        }
+
+        .silver-medal {
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            border-color: #808080;
+            color: #808080;
+        }
+
+        .bronze-medal {
+            background: linear-gradient(135deg, #cd7f32, #e8a87c);
+            border-color: #8b4513;
+            color: #8b4513;
+        }
+
+        .award-card:hover .award-medal {
+            transform: rotateY(180deg);
+        }
+
+        .award-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .award-organization {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .award-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .award-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .award-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .award-tag {
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover .award-tag {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Featured Award */
+        .featured-award {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #f9f9f9 100%);
+            padding: 4rem;
+            border: 2px solid var(--accent);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-award::before {
+            content: '★';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 8rem;
+            color: var(--accent);
+            opacity: 0.1;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-award h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-award .award-organization {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-award .award-description {
+            font-size: 1.05rem;
+            max-width: 800px;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certification-card {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .cert-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .cert-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            transform: translateX(5px);
+        }
+
+        /* Publications Section */
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .publication-item {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .publication-type {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-authors {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .publication-venue {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .publication-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .awards-hero h1 {
+                font-size: 3rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .featured-award {
+                padding: 2rem;
+            }
+
+            .featured-award::before {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .awards-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">DS.PORTFOLIO</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#projects">PROJECTS</a></li>
+                <li><a href="index.html#skills">SKILLS</a></li>
+                <li><a href="awards.html" class="active">AWARDS</a></li>
+            </ul>
+            <a href="index.html#contact" class="contact-btn">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="awards-hero">
+        <div class="container hero-content">
+            <p class="hero-subtitle">RECOGNITION & ACHIEVEMENTS</p>
+            <h1>AWARDS &<br>HONORS</h1>
+            <p class="hero-description">
+                A journey of dedication, innovation, and excellence in data science and machine learning. 
+                Each recognition represents a milestone in pushing the boundaries of what's possible with data.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Hackathons Won</div>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <section class="story-section">
+            <p class="section-title">MY JOURNEY</p>
+            <h2 class="main-title">The Story Behind the Success</h2>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <p>
+                        My journey in data science began with a simple curiosity about patterns in data. 
+                        What started as analyzing small datasets quickly evolved into a passion for uncovering 
+                        insights that drive real-world impact.
+                    </p>
+                    <p>
+                        The first major recognition came in 2020 when my research on predictive modeling 
+                        won the Best Paper Award at the International Conference on Machine Learning. 
+                        This achievement validated years of hard work and opened doors to collaborations 
+                        with leading researchers worldwide.
+                    </p>
+                </div>
+                <div class="story-text">
+                    <p>
+                        Each award represents not just personal achievement, but the collective effort of 
+                        mentors, collaborators, and the broader data science community. From hackathons to 
+                        academic conferences, these experiences have shaped my approach to problem-solving 
+                        and innovation.
+                    </p>
+                    <p>
+                        Today, I continue to push boundaries, mentor aspiring data scientists, and contribute 
+                        to open-source projects that democratize access to advanced analytics and machine learning.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-highlight">
+                "Excellence is not a destination; it's a continuous journey of learning, failing, 
+                iterating, and growing. Every award is a reminder to stay curious and keep pushing 
+                the boundaries of what's possible."
+            </div>
+        </section>
+
+        <!-- Featured Award -->
+        <section class="awards-section">
+            <p class="section-title">FEATURED RECOGNITION</p>
+            <div class="featured-award">
+                <span class="featured-badge">★ MOST PRESTIGIOUS</span>
+                <h3>Data Scientist of the Year 2024</h3>
+                <div class="award-organization">International Data Science Association</div>
+                <p class="award-description">
+                    Recognized for outstanding contributions to the field of data science, including 
+                    groundbreaking research in deep learning applications, mentorship of emerging data 
+                    scientists, and significant impact on industry practices. This award acknowledges 
+                    leadership in advancing the state-of-the-art in machine learning and data analytics.
+                </p>
+                <div class="award-tags">
+                    <span class="award-tag">Leadership</span>
+                    <span class="award-tag">Innovation</span>
+                    <span class="award-tag">Research</span>
+                    <span class="award-tag">Mentorship</span>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <h2 class="main-title">Recognition Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Data Scientist of the Year</h3>
+                        <p>International Data Science Association - Highest honor in the field recognizing 
+                        overall contributions to data science and machine learning.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Best Innovation Award</h3>
+                        <p>AI Summit 2023 - Awarded for developing a novel approach to real-time anomaly 
+                        detection that reduced false positives by 85%.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h3>Kaggle Grandmaster Status</h3>
+                        <p>Achieved Grandmaster status on Kaggle with 5 gold medals in competitions, 
+                        ranking in top 0.1% of global data science community.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Outstanding Research Paper</h3>
+                        <p>NeurIPS Conference - Paper on "Efficient Transfer Learning for Small Datasets" 
+                        selected as one of the top 10 papers of the conference.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>Best Paper Award</h3>
+                        <p>ICML 2020 - First major academic recognition for research on predictive modeling 
+                        with incomplete data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Grid -->
+        <section class="awards-section">
+            <p class="section-title">ALL RECOGNITIONS</p>
+            <h2 class="main-title">Awards & Honors</h2>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-medal gold-medal">1st</div>
+                    <div class="award-category">Competition</div>
+                    <h3 class="award-title">Global AI Hackathon Winner</h3>
+                    <div class="award-organization">TechCrunch Disrupt</div>
+                    <p class="award-description">
+                        Led team to first place among 500+ teams worldwide with an innovative solution 
+                        for climate change prediction using satellite imagery and deep learning.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> October 2023
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Deep Learning</span>
+                        <span class="award-tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-category">Academic</div>
+                    <h3 class="award-title">Excellence in ML Research</h3>
+                    <div class="award-organization">MIT Technology Review</div>
+                    <p class="award-description">
+                        Named one of "35 Innovators Under 35" for contributions to advancing machine 
+                        learning applications in healthcare diagnostics.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> June 2023
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Healthcare</span>
+                        <span class="award-tag">Research</span>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-medal silver-medal">2nd</div>
+                    <div class="award-category">Competition</div>
+                    <h3 class="award-title">NLP Challenge Runner-Up</h3>
+                    <div class="award-organization">Google AI</div>
+                    <p class="award-description">
+                        Second place in Google's Natural Language Understanding Challenge with a novel 
+                        approach to multilingual sentiment analysis.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> March 2023
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">NLP</span>
+                        <span class="award-tag">Transformers</span>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">🎖️</div>
+                    <div class="award-category">Industry</div>
+                    <h3 class="award-title">Data Innovation Award</h3>
+                    <div class="award-organization">Data Science Society</div>
+                    <p class="award-description">
+                        Recognized for implementing data-driven solutions that generated $2M+ in cost 
+                        savings through predictive maintenance systems.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> November 2022
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Business Impact</span>
+                        <span class="award-tag">IoT</span>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-medal bronze-medal">3rd</div>
+                    <div class="award-category">Competition</div>
+                    <h3 class="award-title">Computer Vision Challenge</h3>
+                    <div class="award-organization">CVPR 2022</div>
+                    <p class="award-description">
+                        Third place in object detection challenge with a lightweight model achieving 
+                        state-of-the-art performance on edge devices.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> June 2022
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Computer Vision</span>
+                        <span class="award-tag">Edge AI</span>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">⭐</div>
+                    <div class="award-category">Community</div>
+                    <h3 class="award-title">Open Source Contributor</h3>
+                    <div class="award-organization">GitHub</div>
+                    <p class="award-description">
+                        Recognized as a top contributor to major ML frameworks with 1000+ commits and 
+                        50+ merged pull requests to TensorFlow and PyTorch.
+                    </p>
+                    <div class="award-date">
+                        <i class="far fa-calendar"></i> December 2022
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Open Source</span>
+                        <span class="award-tag">Community</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <p class="section-title">PROFESSIONAL CREDENTIALS</p>
+            <h2 class="main-title">Certifications</h2>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="cert-title">Google Cloud Professional ML Engineer</h3>
+                    <p class="cert-issuer">Google Cloud</p>
+                    <p class="cert-date">Valid: 2023 - 2025</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="cert-title">AWS Certified ML Specialty</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <p class="cert-date">Valid: 2023 - 2026</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="cert-title">TensorFlow Developer</h3>
+                    <p class="cert-issuer">TensorFlow Certificate Program</p>
+                    <p class="cert-date">Issued: 2022</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="cert-title">Deep Learning Specialization</h3>
+                    <p class="cert-issuer">DeepLearning.AI</p>
+                    <p class="cert-date">Completed: 2021</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Azure Data Scientist Associate</h3>
+                    <p class="cert-issuer">Microsoft</p>
+                    <p class="cert-date">Valid: 2022 - 2024</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="cert-title">Advanced Data Analytics</h3>
+                    <p class="cert-issuer">Coursera</p>
+                    <p class="cert-date">Completed: 2020</p>
+                    <a href="#" class="cert-link">
+                        View Credential <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications-section">
+            <p class="section-title">RESEARCH CONTRIBUTIONS</p>
+            <h2 class="main-title">Publications & Papers</h2>
+            
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-type">Conference Paper</div>
+                    <h3 class="publication-title">
+                        Efficient Transfer Learning for Small Datasets in Medical Imaging
+                    </h3>
+                    <p class="publication-authors">
+                        J. Anderson, M. Smith, R. Johnson
+                    </p>
+                    <p class="publication-venue">
+                        Neural Information Processing Systems (NeurIPS), 2023
+                    </p>
+                    <a href="#" class="publication-link">
+                        Read Paper <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-type">Journal Article</div>
+                    <h3 class="publication-title">
+                        Real-Time Anomaly Detection in IoT Systems Using Unsupervised Learning
+                    </h3>
+                    <p class="publication-authors">
+                        J. Anderson, K. Lee
+                    </p>
+                    <p class="publication-venue">
+                        IEEE Transactions on Neural Networks and Learning Systems, 2023
+                    </p>
+                    <a href="#" class="publication-link">
+                        Read Paper <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-type">Conference Paper</div>
+                    <h3 class="publication-title">
+                        Attention Mechanisms for Multilingual Sentiment Analysis
+                    </h3>
+                    <p class="publication-authors">
+                        J. Anderson, P. Chen, S. Williams
+                    </p>
+                    <p class="publication-venue">
+                        Association for Computational Linguistics (ACL), 2022
+                    </p>
+                    <a href="#" class="publication-link">
+                        Read Paper <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-type">Workshop Paper</div>
+                    <h3 class="publication-title">
+                        Explainable AI: Interpretability in Deep Learning Models
+                    </h3>
+                    <p class="publication-authors">
+                        J. Anderson
+                    </p>
+                    <p class="publication-venue">
+                        ICML Workshop on Interpretable Machine Learning, 2022
+                    </p>
+                    <a href="#" class="publication-link">
+                        Read Paper <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 John Anderson. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Built with passion for data science and innovation</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .award-card, .certification-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
